@@ -15,8 +15,8 @@ button{
     transition: background-color 0.2s, color 0.2s;
     color: black;
     background-color: #ffffff;
-    font-family: 'Amatic SC', cursive;
-    font-size:25px;
+    font-family: 'Pacifico', cursive;
+    font-size:15px;
     margin-right: 10px;
 }
 
