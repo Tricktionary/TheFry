@@ -23,7 +23,7 @@ conversion.
 It's a static website so you can run it by simply accessing the HTML file.
 
 ## TODO
-- Make UI more user friendly 
+- Update UI its very ugly at the moment
 - Deploy the application to either Github Pages or Heroku
 
 ### Promo Code : JACKY15 @ any fry
