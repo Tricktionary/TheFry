@@ -25,3 +25,5 @@ It's a static website so you can run it by simply accessing the HTML file.
 ## TODO
 - Make UI more user friendly 
 - Deploy the application to either Github Pages or Heroku
+
+### Promo Code : JACKY15 @ any fry
