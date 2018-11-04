@@ -13,6 +13,10 @@ $(document).ready(function(){
     var img = new Image();
     var image;
     
+    $("#download").click(function(){
+        var image = canvas.toDataURL("image/jpg");
+        $("#download").attr('href',image);
+    })
     //Opens File Modal
     $("#submit").click(function(){
         $("#fry_file").click();
@@ -46,7 +50,6 @@ $(document).ready(function(){
 
     //Changes Text Value
     $("input").change(function(){
-        
         $("#brightness_value").text($("#brightness").val());
         $("#contrast_value").text($("#contrast").val());
         $("#saturation_value").text($("#saturation").val());
