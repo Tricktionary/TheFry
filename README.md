@@ -1,4 +1,4 @@
-# DeepFry.exe
+# TheFry
 A web app that assist you in creating memes by deep frying the memes for you
 
 ![ScreenShot](https://github.com/Tricktionary/TheFry/blob/master/screenshot.PNG)
