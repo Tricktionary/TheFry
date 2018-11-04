@@ -15,11 +15,7 @@
         <!--Font-->
         <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
 
-        <!--Image Manipulation-->
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.1.2/caman.full.min.js"></script>
-        <script src="js/main.js"></script>
-        <script src="js/rangeslider.min.js"></script>
+    
     </head>
     <body>
             <div class="container">
@@ -34,8 +30,8 @@
                 <div class="row">
                     <div class="col-6"> 
                         <div id="editArea" class="hidden">
-                            
-                                <canvas id="canvas" height="250" width="350"></canvas>
+                        
+                            <canvas id="canvas" height="250" width="350"></canvas>
                             
                         </div>
                     </div>
@@ -120,13 +116,29 @@
                                     </tr>
                                 </table>   
                                 <button id="fry_button">Fry</button>
-                                <button id="reset_button">Reset</button>
-                                <button id="download_button">Download</button>
+                                <button id="reset_button">Reset</button> 
+                                <a id="download" download="friedImage.jpg" href="" onclick="download_img(this);">Download</a>
                             </center>                 
                         </div>
                     </div>
                     
                 </div>
+
+                 
+               
+                <!--Image Manipulation-->
+                <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.1.2/caman.full.min.js"></script>
+                <script src="js/main.js"></script>
+                <script src="js/rangeslider.min.js"></script>
+                <script>
+                    var canvas = document.getElementById("canvas");
+    
+                    download_img = function(el) {
+                        var image = canvas.toDataURL("image/jpg");
+                        el.href = image;
+                    };
+                </script>
             </div>
    
     </body>

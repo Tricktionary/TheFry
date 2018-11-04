@@ -25,12 +25,6 @@ $(document).ready(function(){
         uploadPicture(image)
     });
 
-    //Download Button
-    $("#download_button").click(function(event){
-        var imageToDownload = canvas.toDataURL("image/png");
-        $("#download_button").href=imageToDownload;
-    });
-
     //Fries Picture
     $("#fry_button").click(function(){
         /* Pull Values */
@@ -52,6 +46,7 @@ $(document).ready(function(){
 
     //Changes Text Value
     $("input").change(function(){
+        
         $("#brightness_value").text($("#brightness").val());
         $("#contrast_value").text($("#contrast").val());
         $("#saturation_value").text($("#saturation").val());
