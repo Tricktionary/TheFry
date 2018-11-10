@@ -3,11 +3,13 @@ html{
 }
 h1{
 	font-family: 'Amatic SC', cursive;
-	font-size: 70px;
+	font-size: 100px;
     margin-bottom: 50px;
     padding-top: 70px;
 }
 button{
+    font-family: 'Amatic SC', cursive;
+	font-size: 25px;
     padding: 10px 30px;
     font-weight: 300;
     text-decoration: none;
@@ -15,8 +17,6 @@ button{
     transition: background-color 0.2s, color 0.2s;
     color: black;
     background-color: #ffffff;
-    font-family: 'Pacifico', cursive;
-    font-size:15px;
     margin-right: 10px;
 }
 
@@ -24,6 +24,25 @@ button:hover{
 	color:aliceblue;
     background-color: #000000;
     border :2px solid aliceblue;
+}
+
+a{
+    font-family: 'Amatic SC', cursive;
+	font-size: 25px;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 150px;
+    transition: background-color 0.2s, color 0.2s;
+    color: black;
+    background-color: #ffffff;
+    margin-right: 10px;
+}
+
+a:hover{
+    color:aliceblue;
+    background-color: #000000;
+    border :2px solid aliceblue; 
 }
 .center{
 	text-align: center;
