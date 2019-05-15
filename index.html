@@ -1,147 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
+  <head>
 
-        <title>The Fry😩💦</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" type="image/jpg" href="favicon.jpg"> 
-    
-        <!--Styles-->    
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/simple-grid.min.css">
-        <link rel="stylesheet" href="css/rangeslider.css">
-        
-        <!--Font-->
-        <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+    <title>The Fry😩💦</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/jpg" href="favicon.jpg">
 
-    
-    </head>
-    <body>
-            <div class="container">
-                <div class= "center row">
-                    <h1 class="center">The Fry😩💦</h1>
-                    <button id="submit">Upload</button>
-                </div>
-                <div class="row">
-                    <input type="file" id="fry_file" name="fry_file" class="hidden">
-                </div>
-                
-                <div class="row">
-                    <div class="col-6"> 
-                        <div id="editArea" class="hidden">
-                        
-                            <canvas id="canvas" height="350" width="400"></canvas>
-                            
-                        </div>
-                    </div>
-                    <div class="col-6" class="hidden">
-                        <div id="editToggle" class="hidden">
-                            <center> 
-                                <table>
-                                    <!--Brightness-->
-                                    <tr>
-                                        <td><label>Brightness</label></td>
-                                        <td>
-                                            <input
-                                                id="brightness"
-                                                type="range"
-                                                min="-100"                 
-                                                max="100"                  
-                                                step="1"                  
-                                                value="0"
-                                            >
-                                        </td>
-                                        <td><p id="brightness_value"></p></td>
-                                    </tr>
-                                    <!--Contrast-->
-                                    <tr>
-                                        <td><label>Contrast</label></td>
-                                        <td>
-                                            <input
-                                                id="contrast"
-                                                type="range"
-                                                min="-100"                 
-                                                max="100"                  
-                                                step="1"                  
-                                                value="0"                 
-                                            >
-                                        </td>
-                                        <td><p id="contrast_value"></p></td>
-                                    </tr>
-                                    <!--Saturation-->
-                                    <tr>
-                                        <td><label>Saturation</label></td>
-                                        <td>
-                                            <input
-                                                id="saturation"
-                                                type="range"
-                                                min="-100"                 
-                                                max="100"                  
-                                                step="1"                  
-                                                value="0"                 
-                                            >
-                                        </td>
-                                        <td><p id="saturation_value"></p></td>
-                                    </tr>
-                                    <!--Sharpen-->
-                                    <tr>
-                                        <td><label>Sharpen</label></td>
-                                        <td>
-                                            <input
-                                                id="sharpen"
-                                                type="range"
-                                                min="0"                 
-                                                max="100"                  
-                                                step="1"                  
-                                                value="0"                 
-                                            >
-                                        </td>
-                                        <td><p id="sharpen_value"></p></td>
-                                    </tr>
-                                    <!--Noise-->
-                                    <tr>
-                                        <td><label>Noise</label></td>
-                                        <td>
-                                            <input
-                                                id="noise"
-                                                type="range"
-                                                min="0"                 
-                                                max="100"                  
-                                                step="1"                  
-                                                value="0"                 
-                                            >
-                                        </td>
-                                        <td><p id="noise_value"></p></td>
-                                    </tr>
-                                </table>   
-                                <button id="fry_button">Fry</button>
-                                <button id="reset_button">Reset</button> 
-                                <a id="download" download="friedImage.jpg" href="" onclick="download_img(this);">Download</a>
-                            </center>                 
-                        </div>
-                    </div>
-                    
-                </div>
+    <!--Styles-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/simple-grid.min.css">
+    <link rel="stylesheet" href="css/rangeslider.css">
 
-                 
-               
-                <!--Image Manipulation-->
-                <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.1.2/caman.full.min.js"></script>
-                <script src="js/main.js"></script>
-                <script src="js/rangeslider.min.js"></script>
-                <script>
+    <!--Font-->
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
 
-                    var canvas = document.getElementById("canvas");
-    
-                    download_img = function(el) {
-                        var image = canvas.toDataURL("image/jpg");
-                        el.href = image;
-                    };
-            
-                </script>
-            </div>
-   
-    </body>
+
+  </head>
+  <body>
+    <div class="container">
+      <div class= "center row">
+        <h1 class="center">The Fry😩💦</h1>
+        <button id="submit">Upload</button>
+      </div>
+      <div class="row">
+        <input type="file" id="fry_file" name="fry_file" class="hidden">
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          <div id="editArea" class="hidden">
+
+            <canvas id="canvas" height="350" width="400"></canvas>
+
+          </div>
+        </div>
+        <div class="col-6" class="hidden">
+          <div id="editToggle" class="hidden">
+            <center>
+              <table>
+                <!--Brightness-->
+                <tr>
+                  <td><label>Brightness</label></td>
+                  <td>
+                    <input
+                      id="brightness"
+                      type="range"
+                      min="-100"
+                      max="100"
+                      step="1"
+                      value="0"
+                      >
+                  </td>
+                    <td><p id="brightness_value"></p></td>
+                </tr>
+                <!--Contrast-->
+                <tr>
+                  <td><label>Contrast</label></td>
+                  <td>
+                    <input
+                      id="contrast"
+                      type="range"
+                      min="-100"
+                      max="100"
+                      step="1"
+                      value="0"
+                      >
+                  </td>
+                    <td><p id="contrast_value"></p></td>
+                </tr>
+                <!--Saturation-->
+                <tr>
+                  <td><label>Saturation</label></td>
+                  <td>
+                    <input
+                      id="saturation"
+                      type="range"
+                      min="-100"
+                      max="100"
+                      step="1"
+                      value="0"
+                      >
+                  </td>
+                    <td><p id="saturation_value"></p></td>
+                </tr>
+                <!--Sharpen-->
+                <tr>
+                  <td><label>Sharpen</label></td>
+                  <td>
+                    <input
+                      id="sharpen"
+                      type="range"
+                      min="0"
+                      max="100"
+                      step="1"
+                      value="0"
+                      >
+                  </td>
+                    <td><p id="sharpen_value"></p></td>
+                </tr>
+                <!--Noise-->
+                <tr>
+                  <td><label>Noise</label></td>
+                  <td>
+                    <input
+                      id="noise"
+                      type="range"
+                      min="0"
+                      max="100"
+                      step="1"
+                      value="0"
+                      >
+                  </td>
+                    <td><p id="noise_value"></p></td>
+                </tr>
+              </table>
+              <button id="reset_button">Reset</button>
+              <a id="download" download="friedImage.jpg" href="" onclick="download_img(this);">Download</a>
+            </center>
+          </div>
+        </div>
+
+      </div>
+
+
+
+      <!--Image Manipulation-->
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/camanjs/4.1.2/caman.full.min.js"></script>
+      <script src="js/main.js"></script>
+      <script src="js/rangeslider.min.js"></script>
+      <script>
+
+        var canvas = document.getElementById("canvas");
+
+        download_img = function(el) {
+          var image = canvas.toDataURL("image/jpg");
+          el.href = image;
+        };
+
+      </script>
+    </div>
+
+  </body>
 </html>

@@ -6,13 +6,13 @@ $(document).ready(function(){
     $("#saturation_value").text($("#saturation").val());
     $("#sharpen_value").text($("#sharpen").val());
     $("#noise_value").text($("#noise").val());
-    
+
 
     var canvas = $("#canvas")[0];
     var ctx = canvas.getContext("2d");
     var img = new Image();
     var image;
-    
+
     $("#download").click(function(){
         var image = canvas.toDataURL("image/jpg");
         $("#download").attr('href',image);
@@ -22,15 +22,15 @@ $(document).ready(function(){
         $("#fry_file").click();
     });
 
-    //Upload The File to the canvas 
+    //Upload The File to the canvas
     $("#fry_file").change(function(event){
         var files = event.target.files;
         image = files[0];
         uploadPicture(image)
     });
 
-    //Fries Picture
-    $("#fry_button").click(function(){
+    // Applies The Fry
+    function update() {
         /* Pull Values */
         var brightness = $("#brightness").val();
         var contrast = $("#contrast").val();
@@ -39,6 +39,7 @@ $(document).ready(function(){
         var noise = $("#noise").val();
 
         Caman('#canvas', function () {
+            this.reset();
             this.brightness(brightness);
             this.contrast(contrast);
             this.saturation(saturation);
@@ -46,7 +47,13 @@ $(document).ready(function(){
             this.noise(noise);
             this.render();
         });
-    });
+    }
+
+    $("#brightness").mouseup(update);
+    $("#contrast").mouseup(update);
+    $("#saturation").mouseup(update);
+    $("#sharpen").mouseup(update);
+    $("#noise").mouseup(update);
 
     //Changes Text Value
     $("input").change(function(){
@@ -73,7 +80,7 @@ $(document).ready(function(){
         $("#sharpen_value").text($("#sharpen").val());
         $("#noise_value").text($("#noise").val());
     })
-    
+
     //Upload Image to Canvas
     function uploadPicture(image){
         if(image.type.match("image.*")){
@@ -88,7 +95,7 @@ $(document).ready(function(){
                         0, 0, canvas.width, canvas.height);
                 }
             }
-        }   
+        }
         else{
             alert("not an image");
         }
