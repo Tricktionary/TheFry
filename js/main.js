@@ -7,14 +7,11 @@ $(document).ready(function(){
     $("#sharpen_value").text($("#sharpen").val());
     $("#noise_value").text($("#noise").val());
 
-
-    var canvas = $("#canvas")[0];
-    var ctx = canvas.getContext("2d");
+    var ctx = getCanvas().getContext("2d");
     var img = new Image();
-    var image;
 
     $("#download").click(function(){
-        var image = canvas.toDataURL("image/jpg");
+        var image = getCanvas().toDataURL("image/jpg");
         $("#download").attr('href',image);
     })
     //Opens File Modal
@@ -25,9 +22,11 @@ $(document).ready(function(){
     //Upload The File to the canvas
     $("#fry_file").change(function(event){
         var files = event.target.files;
-        image = files[0];
+        var image = files[0];
         uploadPicture(image)
     });
+
+    function getCanvas() { return $("#canvas")[0]; }
 
     // Applies The Fry
     function update() {
@@ -89,15 +88,16 @@ $(document).ready(function(){
             var reader = new FileReader();
             reader.readAsDataURL(image);
             reader.onload = function(evt){
-                if( evt.target.readyState == FileReader.DONE) {
+                if(evt.target.readyState == FileReader.DONE) {
                     img.src = evt.target.result;
-				    img.onload = () => ctx.drawImage(img, 0, 0, img.width,    img.height,     // source rectangle
-                        0, 0, canvas.width, canvas.height);
+                    var canvas = getCanvas();
+                    img.onload = () => ctx.drawImage(img, 0, 0, img.width,    img.height,     // source rectangle
+                    0, 0, canvas.width, canvas.height);
                 }
             }
         }
-        else{
-            alert("not an image");
+        else {
+          alert("not an image");
         }
     }
 })
